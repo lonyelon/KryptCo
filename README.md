@@ -1,4 +1,4 @@
 # KryptCo
-A C# program for encription using AES.
+A C# program for encryption using AES.
 
 Made by Lonyelon
