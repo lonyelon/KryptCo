@@ -52,9 +52,8 @@ namespace AesGUI
         {
             var message = Encoding.ASCII.GetBytes(txt_crypto_pwd.Text);
             SHA256Managed hashString = new SHA256Managed();
-            MD5 md5 = MD5.Create();
             var pValue = hashString.ComputeHash(message);
-            var vValue = md5.ComputeHash(message);
+            var vValue = Encoding.ASCII.GetBytes(BCrypt.Net.BCrypt.HashString(txt_crypto_pwd.Text));
 
             x.set(Convert.ToBase64String(pValue), Convert.ToBase64String(vValue));
             txt_pwd.Text = Convert.ToBase64String(pValue);
